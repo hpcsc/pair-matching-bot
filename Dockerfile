@@ -10,6 +10,7 @@ RUN rustup override set nightly && cargo build --release
 FROM debian:buster-slim
 
 WORKDIR /app
+ENV ROCKET_PORT 80
 
 COPY --from=build /build/target/release/pair-matching-bot .
 
